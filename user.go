@@ -100,6 +100,18 @@ type User struct {
 	// The flags on a user's account.
 	// Only available when the request is authorized via a Bearer token.
 	Flags int `json:"flags"`
+
+	// The user's avatar decoration.
+	// nil if the user does not have one.
+	AvatarDecorationData *UserAvatarDecoration `json:"avatar_decoration_data"`
+}
+
+type UserAvatarDecoration struct {
+	// The hash of the user's avatar decoration.
+	Asset string `json:"asset"`
+
+	// The ID of the avatar decoration's SKU.
+	SkuId string `json:"sku_id"`
 }
 
 // String returns a unique identifier of the form username#discriminator
