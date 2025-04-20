@@ -104,6 +104,9 @@ type User struct {
 	// The user's avatar decoration.
 	// nil if the user does not have one.
 	AvatarDecorationData *UserAvatarDecoration `json:"avatar_decoration_data"`
+
+	// The user's clan.
+	Clan *UserClan `json:"clan"`
 }
 
 type UserAvatarDecoration struct {
@@ -112,6 +115,19 @@ type UserAvatarDecoration struct {
 
 	// The ID of the avatar decoration's SKU.
 	SkuId string `json:"sku_id"`
+}
+
+type UserClan struct {
+	// The hash of the clan's badge.
+	Badge string `json:"badge"`
+
+	// The name of the clan.
+	Tag string `json:"tag"`
+
+	IdentityEnabled bool `json:"identity_enabled"`
+
+	// The guild ID the clan belongs to.
+	IdentityGuildId string `json:"identity_guild_id"`
 }
 
 // String returns a unique identifier of the form username#discriminator
